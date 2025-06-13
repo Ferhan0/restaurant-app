@@ -1,0 +1,17 @@
+# Node.js ve Express
+node_modules/
+.env
+
+# React
+frontend/node_modules/
+frontend/.env
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+
+# VS Code klasörü
+.vscode/
+
+# Log dosyaları
+*.log
