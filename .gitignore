@@ -1,17 +1,23 @@
-# Node.js ve Express
-node_modules/
+# Environment variables
 .env
+*.env
+backend/.env
 
-# React
-frontend/node_modules/
-frontend/.env
+# Dependencies
+node_modules/
+npm-debug.log*
 
-# Sistem dosyaları
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 Thumbs.db
 
-# VS Code klasörü
-.vscode/
-
-# Log dosyaları
+# Logs
 *.log
