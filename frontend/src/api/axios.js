@@ -2,7 +2,9 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: process.env.NODE_ENV === 'production' 
+  ? 'https://restaurant-app-production-f590.up.railway.app/api'
+  : 'http://localhost:3001/api',
   headers: {
     'Content-Type': 'application/json',
   },
