@@ -22,9 +22,14 @@ mongoose.connect(process.env.MONGODB_URI)
     console.log('📝 Note: Update your .env file with a valid MongoDB connection string');
   });
 
+// backend/server.js
+const { securityHeaders, generalLimiter } = require('./middleware/security.middleware');
+
 // Middleware
 app.use(helmet());
 app.use(cors());
+app.use(securityHeaders);     // ← YENİ
+app.use(generalLimiter);      // ← YENİ (opsiyonel)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
@@ -74,5 +79,7 @@ app.listen(PORT, () => {
   console.log(`🔧 Backend: http://localhost:${PORT}`);
   console.log(`📝 API Test: http://localhost:${PORT}/api/test`);
 });
+
+
 
 module.exports = app;
