@@ -73,12 +73,14 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-  console.log(`📱 Frontend: http://localhost:3000`);
-  console.log(`🔧 Backend: http://localhost:${PORT}`);
-  console.log(`📝 API Test: http://localhost:${PORT}/api/test`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+    console.log(`📱 Frontend: http://localhost:3000`);
+    console.log(`🔧 Backend: http://localhost:${PORT}`);
+    console.log(`📝 API Test: http://localhost:${PORT}/api/test`);
+  });
+}
 
 
 
